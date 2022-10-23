@@ -1,7 +1,7 @@
-import SearchFrom from './SearchForm/SearchForm';
+import SearchFrom from 'components/SearchForm/SearchForm';
 import React from 'react';
 import PropTypes from 'prop-types';
-import S from './SearchBar.module.css'
+import S from './SearchBar.module.css';
 
 
 const Searchbar = ({ onSearch }) => (
