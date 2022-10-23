@@ -1,4 +1,4 @@
-import { Audio } from 'react-loader-spinner'
+import { Audio } from 'react-loader-spinner';
 import React, { Component } from 'react';
 import S from './Loader.module.css';
 class Loader extends Component {

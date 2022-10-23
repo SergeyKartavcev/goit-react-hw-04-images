@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import S from './ImageGallery.module.css'
+import S from './ImageGallery.module.css';
 const ImageGalleryItem = ({ image, onImageClick }) => {
   const fullImage = () => onImageClick(image.largeImageURL);
 
   return (
     <li className={S.ImageGalleryItem}>
-      <img  className={S.ImageGalleryItem_image}
+      <img
+        className={S.ImageGalleryItem_image}
         src={image.webformatURL}
         alt={image.tags}
         onClick={fullImage}

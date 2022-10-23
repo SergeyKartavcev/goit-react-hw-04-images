@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
 
-
-const Message = ({ children }) => (
-  <div >{children}</div>
-);
+const Message = ({ children }) => <div>{children}</div>;
 
 Message.defaultProps = {
   children: [],

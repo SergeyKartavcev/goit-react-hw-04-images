@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import S from "./Button.module.css"
+import S from './Button.module.css';
 
 const Button = ({ onClick }) => (
   <div className={['Button-wrapper']}>
