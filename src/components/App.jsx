@@ -25,7 +25,7 @@ function App() {
   }, [searchQuery]);
 
   const onChangeQuery = query => {
-    setImages();
+    setImages([]);
     setPage(1);
     setSearchQuery('');
     setIsLoading(false);
@@ -72,7 +72,7 @@ function App() {
   };
 
   const needToShowLoadMore = images.length > 0 && images.length >= 12;
-
+// console.log(images)
   return (
     <>
       <Searchbar onSearch={onChangeQuery} />
