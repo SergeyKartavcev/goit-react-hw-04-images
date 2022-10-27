@@ -27,7 +27,7 @@ function App() {
   const onChangeQuery = query => {
     setImages([]);
     setPage(1);
-    setSearchQuery('');
+    setSearchQuery(query);
     setIsLoading(false);
     setShowModal(false);
     setLargeImage('');
@@ -42,7 +42,7 @@ function App() {
 
       setImages(prev => [...prev, ...hits]);
 
-      setPage(prevCurrentPage => prevCurrentPage + 1);
+      setPage(prevPage => prevPage + 1);
 
       if (Page !== 1) {
         scrollOnLoadButton();
@@ -72,7 +72,7 @@ function App() {
   };
 
   const needToShowLoadMore = images.length > 0 && images.length >= 12;
-// console.log(images)
+console.log(images)
   return (
     <>
       <Searchbar onSearch={onChangeQuery} />
