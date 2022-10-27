@@ -1,6 +1,6 @@
 import SearchFrom from 'components/SearchForm/SearchForm';
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import S from './SearchBar.module.css';
 
 const Searchbar = ({ onSearch }) => (
@@ -9,8 +9,6 @@ const Searchbar = ({ onSearch }) => (
   </header>
 );
 
-Searchbar.propTypes = {
-  onSearch: PropTypes.func.isRequired,
-};
+
 
 export default Searchbar;

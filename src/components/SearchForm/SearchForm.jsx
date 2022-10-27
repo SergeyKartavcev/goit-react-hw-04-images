@@ -1,38 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import S from './SearchForm.module.css';
+import { useState } from 'react';
 
-class SearchFrom extends Component {
-  state = {
-    query: '',
+function SearchFrom ({ onSearch }) {
+
+  const [query, setQuery] = useState('');
+
+ const handleSearchInput = e => {
+  const { value } = e.currentTarget;
+
+  setQuery(value);
   };
 
-  handleSearchInput = e => {
-    const { name, value } = e.currentTarget;
-
-    this.setState({
-      [name]: value,
-    });
-  };
-
-  handleSubmit = e => {
+ const handleSubmit = e => {
     e.preventDefault();
 
-    if (!this.state.query) return;
+    if (!query) return;
 
-    this.props.onSearch(this.state.query);
+    onSearch(query);
 
-    this.resetForm();
+    resetForm();
   };
 
-  resetForm = () =>
-    this.setState({
-      query: '',
-    });
+ const resetForm = () =>
+ setQuery('');
 
-  render() {
+  
     return (
-      <form onSubmit={this.handleSubmit} className={S.SearchForm}>
+      <form onSubmit={handleSubmit} className={S.SearchForm}>
         <button type="submit" className={S.SearchForm_button}>
           <span>Search</span>
         </button>
@@ -41,15 +37,15 @@ class SearchFrom extends Component {
           className={S.SearchForm_input}
           type="text"
           name="query"
-          value={this.state.query}
-          onChange={this.handleSearchInput}
+          value={query}
+          onChange={handleSearchInput}
           autoComplete="off"
           autoFocus
           placeholder="Search images and photos"
         />
       </form>
     );
-  }
+  
 }
 
 SearchFrom.propTypes = {
