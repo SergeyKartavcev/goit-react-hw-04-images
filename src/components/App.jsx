@@ -72,7 +72,7 @@ function App() {
   };
 
   const needToShowLoadMore = images.length > 0 && images.length >= 12;
-console.log(images)
+  console.log(images);
   return (
     <>
       <Searchbar onSearch={onChangeQuery} />

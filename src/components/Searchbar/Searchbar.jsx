@@ -9,6 +9,4 @@ const Searchbar = ({ onSearch }) => (
   </header>
 );
 
-
-
 export default Searchbar;
