@@ -5,9 +5,9 @@ import S from './Modal.module.css';
 
 function Modal({ children, onClose }) {
   useEffect(() => {
-    window.addEventListener('keydown', this.handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown);
     return () => {
-      window.removeEventListener('keydown', handleKeyDown());
+      window.removeEventListener('keydown', handleKeyDown);
     };
   });
 
@@ -24,7 +24,7 @@ function Modal({ children, onClose }) {
   };
 
   return (
-    <div className={S.Overlay} onClick={handleBackdpropClick()}>
+    <div className={S.Overlay} onClick={handleBackdpropClick}>
       <div className={S.Modal}>{children}</div>
     </div>
   );
